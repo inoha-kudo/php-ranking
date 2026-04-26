@@ -15,7 +15,7 @@ final readonly class Rank
     public const string EXCEPTION_MESSAGE_VALUE_GREATER_THAN_MAX = 'The provided value (%d) must be less than or equal to %d.';
 
     private function __construct(
-        public int $value,
+        private int $value,
     ) {
         /** @phpstan-ignore-next-line */
         assert(self::MIN <= self::MAX);
@@ -39,5 +39,10 @@ final readonly class Rank
     public static function of(int $value): self
     {
         return new self($value);
+    }
+
+    public function value(): int
+    {
+        return $this->value;
     }
 }

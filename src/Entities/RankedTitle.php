@@ -42,16 +42,16 @@ final readonly class RankedTitle
     public function rankUniqueKey(): string
     {
         return implode(self::UNIQUE_KEY_SEPARATOR, [
-            $this->rankingId->value,
+            $this->rankingId->value(),
             $this->storedAt,
-            $this->rank->value,
+            $this->rank->value(),
         ]);
     }
 
     public function titleUniqueKey(): string
     {
         return implode(self::UNIQUE_KEY_SEPARATOR, [
-            $this->rankingId->value,
+            $this->rankingId->value(),
             $this->storedAt,
             $this->title,
         ]);
@@ -62,9 +62,9 @@ final readonly class RankedTitle
     {
         return [
             'id' => $this->id,
-            'ranking_id' => $this->rankingId->value,
+            'ranking_id' => $this->rankingId->value(),
             'stored_at' => $this->storedAt->toIso8601String(),
-            'rank' => $this->rank->value,
+            'rank' => $this->rank->value(),
             'title' => $this->title,
             'metadata' => $this->metadata,
         ];

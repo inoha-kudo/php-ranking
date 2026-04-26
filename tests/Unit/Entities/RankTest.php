@@ -57,7 +57,7 @@ final class RankTest extends TestCase
 
         $this->assertSame(
             $value,
-            Rank::of($value)->value,
+            Rank::of($value)->value(),
         );
     }
 }

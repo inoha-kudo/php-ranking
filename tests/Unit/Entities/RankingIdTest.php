@@ -57,7 +57,7 @@ final class RankingIdTest extends TestCase
 
         $this->assertSame(
             $value,
-            RankingId::of($value)->value,
+            RankingId::of($value)->value(),
         );
     }
 }

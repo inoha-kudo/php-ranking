@@ -17,7 +17,7 @@ final readonly class RankingId
     private const int UINT8_MAX = 255;
 
     private function __construct(
-        public int $value,
+        private int $value,
     ) {
         /** @phpstan-ignore-next-line */
         assert(self::MIN <= self::MAX);
@@ -41,5 +41,10 @@ final readonly class RankingId
     public static function of(int $value): self
     {
         return new self($value);
+    }
+
+    public function value(): int
+    {
+        return $this->value;
     }
 }

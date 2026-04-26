@@ -45,15 +45,15 @@ final class RankedTitleListTest extends TestCase
 
         RankedTitleList::from(
             RankedTitle::create(
-                $this->rankedTitles[0]->rankingId->value,
+                $this->rankedTitles[0]->rankingId->value(),
                 $this->rankedTitles[0]->storedAt,
-                $this->rankedTitles[0]->rank->value,
+                $this->rankedTitles[0]->rank->value(),
                 $this->rankedTitles[0]->title,
             ),
             RankedTitle::create(
-                $this->rankedTitles[1]->rankingId->value,
+                $this->rankedTitles[1]->rankingId->value(),
                 $this->rankedTitles[1]->storedAt,
-                $this->rankedTitles[0]->rank->value,
+                $this->rankedTitles[0]->rank->value(),
                 $this->rankedTitles[1]->title,
             ),
         );
@@ -66,15 +66,15 @@ final class RankedTitleListTest extends TestCase
 
         RankedTitleList::from(
             RankedTitle::create(
-                $this->rankedTitles[0]->rankingId->value,
+                $this->rankedTitles[0]->rankingId->value(),
                 $this->rankedTitles[0]->storedAt,
-                $this->rankedTitles[0]->rank->value,
+                $this->rankedTitles[0]->rank->value(),
                 $this->rankedTitles[0]->title,
             ),
             RankedTitle::create(
-                $this->rankedTitles[1]->rankingId->value,
+                $this->rankedTitles[1]->rankingId->value(),
                 $this->rankedTitles[1]->storedAt,
-                $this->rankedTitles[1]->rank->value,
+                $this->rankedTitles[1]->rank->value(),
                 $this->rankedTitles[0]->title,
             ),
         );
@@ -138,17 +138,17 @@ final class RankedTitleListTest extends TestCase
             [
                 [
                     'id' => null,
-                    'ranking_id' => $this->rankedTitles[0]->rankingId->value,
+                    'ranking_id' => $this->rankedTitles[0]->rankingId->value(),
                     'stored_at' => $this->rankedTitles[0]->storedAt->toIso8601String(),
-                    'rank' => $this->rankedTitles[0]->rank->value,
+                    'rank' => $this->rankedTitles[0]->rank->value(),
                     'title' => $this->rankedTitles[0]->title,
                     'metadata' => null,
                 ],
                 [
                     'id' => null,
-                    'ranking_id' => $this->rankedTitles[1]->rankingId->value,
+                    'ranking_id' => $this->rankedTitles[1]->rankingId->value(),
                     'stored_at' => $this->rankedTitles[1]->storedAt->toIso8601String(),
-                    'rank' => $this->rankedTitles[1]->rank->value,
+                    'rank' => $this->rankedTitles[1]->rank->value(),
                     'title' => $this->rankedTitles[1]->title,
                     'metadata' => null,
                 ],
